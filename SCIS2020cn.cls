@@ -80,7 +80,7 @@
 \let\@ReferenceName\@empty \def\ReferenceName#1{\def\@ReferenceName{#1}}
 %-------------------------- Online ------------------------------------
 \newcommand\online{
-\def\@onlinetag{1}
+    \def\@onlinetag{1}
 }
 
 %-------------------------- Title ------------------------------------
@@ -101,176 +101,176 @@
 \let\@authoremaillist\@empty
 \let\@onlyoneauthor\@empty
 \renewcommand*{\author}[3][]{%
-  \ifx \@author\@empty
-    \def\@author{#2\@authornote{#1}{#3}}
-  \else
-    \def\@onlyoneauthor{No}
-    \expandafter\def\expandafter\@author\expandafter
-      {\@author,\,\, #2\@authornote{#1}{#3}}
-  \fi
-  \ifx#3\@empty\else
-      \ifx\@authoremaillist\@empty \def\@authoremaillist{#3}
-      \else \expandafter\def\expandafter\@authoremaillist\expandafter{\@authoremaillist,~#3}
-      \fi
-  \fi
+    \ifx \@author\@empty
+        \def\@author{#2\@authornote{#1}{#3}}
+    \else
+        \def\@onlyoneauthor{No}
+        \expandafter\def\expandafter\@author\expandafter
+        {\@author,\,\, #2\@authornote{#1}{#3}}
+    \fi
+    \ifx#3\@empty\else
+        \ifx\@authoremaillist\@empty \def\@authoremaillist{#3}
+        \else \expandafter\def\expandafter\@authoremaillist\expandafter{\@authoremaillist,~#3}
+        \fi
+    \fi
 }
 
 \let\@enauthor\@empty
 \newcommand*{\enauthor}[3][]{%
-  \ifx \@enauthor\@empty
-    \def\@enauthor{#2\@enauthornote{#1}{#3}}
-    \let\@enauthortemp\@enauthor
-  \else
-    \let\@enauthor\@enauthortemp
-    \expandafter\def\expandafter\@enauthor\expandafter
-      {\@enauthor~{\&}~#2\@enauthornote{#1}{#3}}
-    \expandafter\def\expandafter\@enauthortemp\expandafter
-      {\@enauthortemp,~#2\@enauthornote{#1}{#3}}
-  \fi
+    \ifx \@enauthor\@empty
+        \def\@enauthor{#2\@enauthornote{#1}{#3}}
+        \let\@enauthortemp\@enauthor
+    \else
+        \let\@enauthor\@enauthortemp
+        \expandafter\def\expandafter\@enauthor\expandafter
+        {\@enauthor~{\&}~#2\@enauthornote{#1}{#3}}
+        \expandafter\def\expandafter\@enauthortemp\expandafter
+        {\@enauthortemp,~#2\@enauthornote{#1}{#3}}
+    \fi
 }
 
 \def\@authornote#1#2{%
-  \ifx#1\@empty
-  \else \textsuperscript{\footnotesize #1}%
-  \fi
+    \ifx#1\@empty
+    \else \textsuperscript{\footnotesize #1}%
+    \fi
 
-  \ifx#2\@empty\else
-  \ifx\@onlyoneauthor\@empty\else
-  \ifx\@comment\@empty
-  \textsuperscript{\hspace{-0.15mm}\bahao{*}}%
-  \fi\fi\fi
+    \ifx#2\@empty\else
+        \ifx\@onlyoneauthor\@empty\else
+            \ifx\@comment\@empty
+                \textsuperscript{\hspace{-0.15mm}\bahao{*}}%
+            \fi\fi\fi
 }
 
 \def\@enauthornote#1#2{%
-  \ifx#1\@empty
-  \else \textsuperscript{#1}%
-  \fi
+    \ifx#1\@empty
+    \else \textsuperscript{#1}%
+    \fi
 
-  \ifx#2\@empty\else
-  \ifx\@onlyoneauthor\@empty\else
-  \ifx\@comment\@empty
-  \textsuperscript{\hspace{-0.15mm}*}%
-  \fi\fi\fi
+    \ifx#2\@empty\else
+        \ifx\@onlyoneauthor\@empty\else
+            \ifx\@comment\@empty
+                \textsuperscript{\hspace{-0.15mm}*}%
+            \fi\fi\fi
 }
 
 \def\@address{}
 \newcommand*{\address}[2][]{
     \def\@addressnote{#1}
-  \ifx\@address\@empty
-    \ifx\@addressnote\@empty
-        \def\@address{#2}
+    \ifx\@address\@empty
+        \ifx\@addressnote\@empty
+            \def\@address{#2}
+        \else
+            \def\@address{#1.~#2}
+        \fi
     \else
-        \def\@address{#1.~#2}
-    \fi
-  \else
-    \ifx\@addressnote\@empty
-        \expandafter\def\expandafter\@address\expandafter
-        {\@address\\{#2}}
-    \else
-        \expandafter\def\expandafter\@address\expandafter
-        {\@address\\{#1.~#2}}
-    \fi
-  \fi}
+        \ifx\@addressnote\@empty
+            \expandafter\def\expandafter\@address\expandafter
+            {\@address\\{#2}}
+        \else
+            \expandafter\def\expandafter\@address\expandafter
+            {\@address\\{#1.~#2}}
+        \fi
+    \fi}
 
 
 \def\@enaddress{}
 \newcommand*{\enaddress}[2][]{
     \def\@enaddressnote{#1}
-  \ifx \@enaddress\@empty
-    \ifx\@enaddressnote\@empty
-        \def\@enaddress{{\it #2}}
+    \ifx \@enaddress\@empty
+        \ifx\@enaddressnote\@empty
+            \def\@enaddress{{\it #2}}
+        \else
+            \def\@enaddress{#1.~{\it #2}}
+        \fi
     \else
-        \def\@enaddress{#1.~{\it #2}}
-    \fi
-  \else
-    \ifx\@enaddressnote\@empty
-        \expandafter\def\expandafter\@enaddress\expandafter
-        {\@enaddress;\\{\it #2}}
-    \else
-        \expandafter\def\expandafter\@enaddress\expandafter
-        {\@enaddress;\\{#1.~{\it #2}}}
-    \fi
-  \fi}
+        \ifx\@enaddressnote\@empty
+            \expandafter\def\expandafter\@enaddress\expandafter
+            {\@enaddress;\\{\it #2}}
+        \else
+            \expandafter\def\expandafter\@enaddress\expandafter
+            {\@enaddress;\\{#1.~{\it #2}}}
+        \fi
+    \fi}
 
 
 \renewcommand\maketitle{
 \ifthenelse{\pageref{LastPage}=\@BeginPage}
-    {\def\@pagerank{\@BeginPage}}
-    {\def\@pagerank{\@BeginPage--\pageref{LastPage}}}
+{\def\@pagerank{\@BeginPage}}
+{\def\@pagerank{\@BeginPage--\pageref{LastPage}}}
 \ifthenelse{\equal{\@DOI}{\@empty}}
+{\def\@oddheadtext{中国科学\,:\,信息科学}}
+{\ifthenelse{\equal{\@onlinetag}{\@empty}}
+    {\def\@oddheadtext{中国科学\,:\,信息科学\hspace{3mm}第~\@Vol~卷\hspace{3mm}第~\@No~期}}
     {\def\@oddheadtext{中国科学\,:\,信息科学}}
-    {\ifthenelse{\equal{\@onlinetag}{\@empty}}
-        {\def\@oddheadtext{中国科学\,:\,信息科学\hspace{3mm}第~\@Vol~卷\hspace{3mm}第~\@No~期}}
-        {\def\@oddheadtext{中国科学\,:\,信息科学}}
-    }
-    %首页页眉页脚
-    \begin{picture}(0,0)
-        \put(-21,17){\parbox[c]{120mm}{\zihao{-5} SCIENTIA SINICA~\,\,Informationis}}
-        \ifx\@DOI\@empty
-            \put(-21,35){\parbox[c]{120mm}{\jiuhao 中国科学\,: 信息科学}}
-            \put(-21,29){\thicklines\line(1,0){455}}
-        \else
-            \ifx\@onlinetag\@empty \put(-21,35){\parbox[c]{120mm}{\jiuhao 中国科学\,: 信息科学\hspace{5mm}\@Year\,年\hspace{3mm}第\,\@Vol\,卷\hspace{3mm}第\,\@No\,期\,:\;\@pagerank}}
-            \else \put(-21,35){\parbox[c]{120mm}{\jiuhao 中国科学\,: 信息科学}}
-            \fi
-            \put(-21,29){\thicklines\line(1,0){335}}
-            \ifx\@Luntan\@empty\else
-                \put(-21,17){\makebox[118truemm][r]{\heiti\zihao{-5}\@Luntan}}
-                \put(-21,-110){\makebox[160truemm][r]{\vbox{\hbox{\includegraphics{kxjslt.eps}}}}}
-            \fi
-            \put(-21,17){\makebox[160truemm][r]{\includegraphics{SB-F.eps}}}
-            %\put(-21,-9){\makebox[160truemm][r]{\href{http://crossmark.crossref.org/dialog/?doi=\@DOI&domain=pdf&date_stamp=\today}{\includegraphics{Print-CrossMark.eps}}}}
-            \put(-21,-640){\makebox[160truemm][l]{\scriptsize\bf\@copyright《中国科学》杂志社}}
-            \put(-21,-640){\makebox[160truemm][r]{\scriptsize\bf\@website}}
-        \fi
-        \ifx\@SpecialTopic\@empty
-            \ifx\@ArticleType\@empty\else
-                \put(-21,-2){\colorbox[cmyk]{0,0,0,.3}{\heiti\zihao{-4}~~~\@ArticleType~~~}}
-            \fi
-        \else
-            \ifx\@ArticleType\@empty
-                \put(-21,-2){\colorbox[cmyk]{0,0,0,.3}{\heiti\zihao{-4}~~~\@SpecialTopic~~~}}
-            \else
-                \put(-21,-2){\colorbox[cmyk]{0,0,0,.3}{\heiti\zihao{-4}~~~\@SpecialTopic~{\bf\sanhao\raisebox{2pt}{.}}~\@ArticleType~~~}}
-            \fi
-        \fi
-    \end{picture}
-
-    \ifx\@AuthorCitation\@empty
+}
+%首页页眉页脚
+\begin{picture}(0,0)
+    \put(-21,17){\parbox[c]{120mm}{\zihao{-5} SCIENTIA SINICA~\,\,Informationis}}
+    \ifx\@DOI\@empty
+        \put(-21,35){\parbox[c]{120mm}{\jiuhao 中国科学\,: 信息科学}}
+        \put(-21,29){\thicklines\line(1,0){455}}
     \else
-        \ifx\@enAuthorCitation\@empty
-            \begin{figure}[!b]
+        \ifx\@onlinetag\@empty \put(-21,35){\parbox[c]{120mm}{\jiuhao 中国科学\,: 信息科学\hspace{5mm}\@Year\,年\hspace{3mm}第\,\@Vol\,卷\hspace{3mm}第\,\@No\,期\,:\;\@pagerank}}
+        \else \put(-21,35){\parbox[c]{120mm}{\jiuhao 中国科学\,: 信息科学}}
+        \fi
+        \put(-21,29){\thicklines\line(1,0){335}}
+        \ifx\@Luntan\@empty\else
+            \put(-21,17){\makebox[118truemm][r]{\heiti\zihao{-5}\@Luntan}}
+            \put(-21,-110){\makebox[160truemm][r]{\vbox{\hbox{\includegraphics{kxjslt.eps}}}}}
+        \fi
+        \put(-21,17){\makebox[160truemm][r]{\includegraphics{SB-F.eps}}}
+        %\put(-21,-9){\makebox[160truemm][r]{\href{http://crossmark.crossref.org/dialog/?doi=\@DOI&domain=pdf&date_stamp=\today}{\includegraphics{Print-CrossMark.eps}}}}
+        \put(-21,-640){\makebox[160truemm][l]{\scriptsize\bf\@copyright《中国科学》杂志社}}
+        \put(-21,-640){\makebox[160truemm][r]{\scriptsize\bf\@website}}
+    \fi
+    \ifx\@SpecialTopic\@empty
+        \ifx\@ArticleType\@empty\else
+            \put(-21,-2){\colorbox[cmyk]{0,0,0,.3}{\heiti\zihao{-4}~~~\@ArticleType~~~}}
+        \fi
+    \else
+        \ifx\@ArticleType\@empty
+            \put(-21,-2){\colorbox[cmyk]{0,0,0,.3}{\heiti\zihao{-4}~~~\@SpecialTopic~~~}}
+        \else
+            \put(-21,-2){\colorbox[cmyk]{0,0,0,.3}{\heiti\zihao{-4}~~~\@SpecialTopic~{\bf\sanhao\raisebox{2pt}{.}}~\@ArticleType~~~}}
+        \fi
+    \fi
+\end{picture}
+
+\ifx\@AuthorCitation\@empty
+\else
+    \ifx\@enAuthorCitation\@empty
+        \begin{figure}[!b]
             \centering
             \fcolorbox[rgb]{1,1,1}{0.8,0.8,0.8}{\parbox[t]{144.6truemm{\bf\scriptsize 引用格式:\ }}{\scriptsize \@AuthorCitation. \@titlecitation. 中国科学: 信息科学,
-                \ifx\@DOI\@empty{在审文章}\else{\@Year}{\ifx\@onlinetag\@empty{, \@Vol: \@pagerank}\fi}{, doi: }\href{https://doi.org/\@DOI}{\url{\@DOI}}\fi}}
-            \end{figure}
-        \else
-            \begin{figure}[!b]
+                    \ifx\@DOI\@empty{在审文章}\else{\@Year}{\ifx\@onlinetag\@empty{, \@Vol: \@pagerank}\fi}{, doi: }\href{https://doi.org/\@DOI}{\url{\@DOI}}\fi}}
+        \end{figure}
+    \else
+        \begin{figure}[!b]
             \centering
             \fcolorbox[rgb]{1,1,1}{0.8,0.8,0.8}{\parbox[t]{144.6truemm{\bf\scriptsize 引用格式:\ }}
                 {\scriptsize \@AuthorCitation. \@titlecitation. 中国科学: 信息科学,
-                \ifx\@DOI\@empty{在审文章}\else{\@Year}{\ifx\@onlinetag\@empty{, \@Vol: \@pagerank}\fi}{, doi: }\href{https://doi.org/\@DOI}{\url{\@DOI}}\fi\\
-                \@enAuthorCitation. \@entitlecitation~(in Chinese). Sci Sin Inform,
-                \ifx\@DOI\@empty{for review}\else{\@Year}{\ifx\@onlinetag\@empty{, \@Vol: \@pagerank}\fi}{, doi: }\href{https://doi.org/\@DOI}{\url{\@DOI}}\fi}}
-            \end{figure}
-        \fi
+                    \ifx\@DOI\@empty{在审文章}\else{\@Year}{\ifx\@onlinetag\@empty{, \@Vol: \@pagerank}\fi}{, doi: }\href{https://doi.org/\@DOI}{\url{\@DOI}}\fi\\
+                    \@enAuthorCitation. \@entitlecitation~(in Chinese). Sci Sin Inform,
+                    \ifx\@DOI\@empty{for review}\else{\@Year}{\ifx\@onlinetag\@empty{, \@Vol: \@pagerank}\fi}{, doi: }\href{https://doi.org/\@DOI}{\url{\@DOI}}\fi}}
+        \end{figure}
     \fi
-    \renewcommand\thefootnote{\@fnsymbol\c@footnote}
-    \def\@makefnmark{\hbox{\@textsuperscript{\normalfont\@thefnmark}}}
-    \long\def\@makefntext##1{\noindent\@textsuperscript{\normalfont\@thefnmark}##1}
-    \@maketitle
-    \thispagestyle{empty}
-    \long\def\@makefntext##1{\parindent 7mm \indent\hbox{\hss{\@thefnmark)\ }}\baselineskip 10pt ##1}
-    \def\@makefnmark{\hbox\textsuperscript{\@thefnmark)}}
-    \renewcommand\thefootnote{\arabic{footnote}}
-    \setcounter{footnote}{0}
-    \setcounter{page}{\@BeginPage}
+\fi
+\renewcommand\thefootnote{\@fnsymbol\c@footnote}
+\def\@makefnmark{\hbox{\@textsuperscript{\normalfont\@thefnmark}}}
+\long\def\@makefntext##1{\noindent\@textsuperscript{\normalfont\@thefnmark}##1}
+\@maketitle
+\thispagestyle{empty}
+\long\def\@makefntext##1{\parindent 7mm \indent\hbox{\hss{\@thefnmark)\ }}\baselineskip 10pt ##1}
+\def\@makefnmark{\hbox\textsuperscript{\@thefnmark)}}
+\renewcommand\thefootnote{\arabic{footnote}}
+\setcounter{footnote}{0}
+\setcounter{page}{\@BeginPage}
 }
 
 \renewcommand{\raggedright}{\leftskip=0pt \rightskip=0pt plus 0cm}
 \def\@maketitle{
-  \noindent
-  \vspace{5mm}
+    \noindent
+    \vspace{5mm}
     \begin{flushleft}
         %标题
         \renewcommand{\baselinestretch}{0.9}
@@ -307,32 +307,32 @@
             \rmfamily\footnotesize\songti\zihao{6}
             %日期
             \ifx\@DOI\@empty\else
-            \ifx\@ReviseDate\@empty
-                \ifx\@OnlineDate\@empty收稿日期: \@ReceiveDate;\ \ 接受日期: \@AcceptDate\\
-                \else收稿日期: \@ReceiveDate;\ \ 接受日期: \@AcceptDate;\ \ 网络出版日期: \@OnlineDate\\
-                \fi
-            \else
-                \ifx\@OnlineDate\@empty收稿日期: \@ReceiveDate;\ \ 修回日期: \@ReviseDate;\ \ 接受日期: \@AcceptDate\\
-                \else收稿日期: \@ReceiveDate;\ \ 修回日期: \@ReviseDate;\ \ 接受日期: \@AcceptDate;\ \ 网络出版日期: \@OnlineDate\\
-                \fi
-            \fi\fi
+                \ifx\@ReviseDate\@empty
+                    \ifx\@OnlineDate\@empty收稿日期: \@ReceiveDate;\ \ 接受日期: \@AcceptDate\\
+                    \else收稿日期: \@ReceiveDate;\ \ 接受日期: \@AcceptDate;\ \ 网络出版日期: \@OnlineDate\\
+                    \fi
+                \else
+                    \ifx\@OnlineDate\@empty收稿日期: \@ReceiveDate;\ \ 修回日期: \@ReviseDate;\ \ 接受日期: \@AcceptDate\\
+                    \else收稿日期: \@ReceiveDate;\ \ 修回日期: \@ReviseDate;\ \ 接受日期: \@AcceptDate;\ \ 网络出版日期: \@OnlineDate\\
+                    \fi
+                \fi\fi
         \end{flushleft}
         \ifx\@Foundation\@empty\vspace{-4mm}
         \else\vspace{-6mm}\hspace{-2.2mm}\begin{tabular}{p{\textwidth}!}\renewcommand{\baselinestretch}{1.2}\rmfamily\footnotesize\songti\zihao{6}\@Foundation\end{tabular}
         \fi
         \vspace{-4mm}
-  \fi
+    \fi
 
 
-  %摘要和关键词
-  \ifx\@abstract\@empty
-  \else
-  \noindent
-  \begin{picture}(0,0){\put(0,-5){\color[rgb]{0.4,0.4,0.4}\line(1,0){455}}}\end{picture}
-  {\vskip2.3mm\noindent{\heiti 摘要\quad\,\,}\ignorespaces\fangsong\@abstract\vspace{1mm}\\
-  \noindent{\heiti 关键词\quad\,\,}\ignorespaces\fangsong\@keywords\\}
-  \begin{picture}(0,0){\put(0,5){\color[rgb]{0.4,0.4,0.4}\line(1,0){455}}}\end{picture}
-  \fi
+    %摘要和关键词
+    \ifx\@abstract\@empty
+    \else
+        \noindent
+        \begin{picture}(0,0){\put(0,-5){\color[rgb]{0.4,0.4,0.4}\line(1,0){455}}}\end{picture}
+        {\vskip2.3mm\noindent{\heiti 摘要\quad\,\,}\ignorespaces\fangsong\@abstract\vspace{1mm}\\
+        \noindent{\heiti 关键词\quad\,\,}\ignorespaces\fangsong\@keywords\\}
+        \begin{picture}(0,0){\put(0,5){\color[rgb]{0.4,0.4,0.4}\line(1,0){455}}}\end{picture}
+    \fi
 }
 
 
@@ -371,11 +371,11 @@
     %英文摘要关键词
     \ifx\@enabstract\@empty
     \else
-    \noindent\hspace*{-2.9mm}
-    \begin{tabular}{p{\textwidth}}
-    \renewcommand{\baselinestretch}{0.8}\jiuhao\textbf{Abstract}\quad\@enabstract\\
-    \renewcommand{\baselinestretch}{0.8}\jiuhao\textbf{Keywords}\quad\@enkeywords
-    \end{tabular}
+        \noindent\hspace*{-2.9mm}
+        \begin{tabular}{p{\textwidth}}
+            \renewcommand{\baselinestretch}{0.8}\jiuhao\textbf{Abstract}\quad\@enabstract \\
+            \renewcommand{\baselinestretch}{0.8}\jiuhao\textbf{Keywords}\quad\@enkeywords
+        \end{tabular}
     \fi
 }
 
@@ -398,8 +398,8 @@
                 \fi
                 {\noindent\qihao{\bf #2}~#3\par}
             \end{minipage}
-        \def\@authorcount{1}
-    \else
+            \def\@authorcount{1}
+            \else
             \begin{minipage}[t]{0.48\textwidth}
                 \renewcommand{\baselinestretch}{1.25}
                 \baselineskip 9pt
@@ -431,14 +431,14 @@
 \newcommand*\Acknowledgements[1]{
     \vskip 5mm
     \baselineskip 16pt
-    {\textbf{致谢}\quad{\fangsong#1}}\par
+        {\textbf{致谢}\quad{\fangsong#1}}\par
 }
 
 \newcommand*\Supplements[1]{
     \vskip 5mm
     \baselineskip 16pt
-    {\textbf{补充材料}\quad{\fangsong#1~本文的补充材料见网络版infocn.scichina.com.
-    补充材料为作者提供的原始数据, 作者对其学术质量和内容负责.}}\par
+        {\textbf{补充材料}\quad{\fangsong#1~本文的补充材料见网络版infocn.scichina.com.
+                补充材料为作者提供的原始数据, 作者对其学术质量和内容负责.}}\par
 }
 \titleformat{\section}{\large\bfseries\heiti}{\thesection}{1em}{}
 \titleformat{\subsection}{\normalsize\bfseries\heiti}{\thesubsection}{1em}{}
@@ -447,10 +447,10 @@
 %\renewcommand\sectionname{\thesection}
 %\renewcommand\sectionformat{}
 %\renewcommand\section{
-    %\@startsection{section}{1}{\z@}%
-    %{-4.5ex \@plus -1ex \@minus -.2ex}%
-    %{2.5ex \@plus.1ex}%
-    %{\normalfont\large\bfseries\heiti\zihao{-4}}
+%\@startsection{section}{1}{\z@}%
+%{-4.5ex \@plus -1ex \@minus -.2ex}%
+%{2.5ex \@plus.1ex}%
+%{\normalfont\large\bfseries\heiti\zihao{-4}}
 %}
 
 %\renewcommand\subsection{
@@ -519,9 +519,9 @@
 \renewenvironment{thebibliography}[1]{
     \vspace{6mm}\noindent
     \ifx\@ReferenceName\@empty
-    \parbox[c]{20mm}{\heiti\zihao{5}参考文献}
+        \parbox[c]{20mm}{\heiti\zihao{5}参考文献}
     \else
-    \parbox[c]{20mm}{\heiti\zihao{5}\@ReferenceName}
+        \parbox[c]{20mm}{\heiti\zihao{5}\@ReferenceName}
     \fi
     \hspace{-6mm}
     \rule[0.01\baselineskip]{0.9\textwidth}{0.5pt}
@@ -608,14 +608,14 @@
 \def\proof{{\heiti 证明}\quad}
 \renewcommand{\qedsymbol}{} %去掉小方框
 \newtheoremstyle{newdefinition}%
-    {2pt}% Space above
-    {2pt}% Space below
-    {\normalfont}% Body font
-    {1.83em}% Indent amount
-    {\bfseries}% Theorem head font
-    {}% Punctuation after theorem head
-    {10pt plus 1pt minus 1pt}% Space after theorem head
-    {}% Theorem head spec (can be left empty, meaning `normal')
+{2pt}% Space above
+{2pt}% Space below
+{\normalfont}% Body font
+{1.83em}% Indent amount
+{\bfseries}% Theorem head font
+{}% Punctuation after theorem head
+{10pt plus 1pt minus 1pt}% Space after theorem head
+{}% Theorem head spec (can be left empty, meaning `normal')
 \theoremstyle{newdefinition}%
 \newtheorem{definition}{定义}
 \newtheorem{theorem}{定理}
@@ -631,29 +631,29 @@
 \newtheorem{remark}{注释}
 \newtheorem{property}{性质}
 \iffalse
-\makeatletter
-\renewcommand\normalsize{%
-   \@setfontsize\normalsize\@xpt\@xiipt
-   \abovedisplayskip 9\p@ \@plus4\p@ \@minus5\p@
-   \abovedisplayshortskip \z@ \@plus3\p@
-   \belowdisplayshortskip 6\p@ \@plus3\p@ \@minus3\p@
-   \belowdisplayskip  \abovedisplayskip
-   \let\@listi\@listI}
-\makeatother
+    \makeatletter
+    \renewcommand\normalsize{%
+        \@setfontsize\normalsize\@xpt\@xiipt
+        \abovedisplayskip 9\p@ \@plus4\p@ \@minus5\p@
+        \abovedisplayshortskip \z@ \@plus3\p@
+        \belowdisplayshortskip 6\p@ \@plus3\p@ \@minus3\p@
+        \belowdisplayskip  \abovedisplayskip
+        \let\@listi\@listI}
+    \makeatother
 \fi
 
 %--------------------------------- list ---------------------------------
 \renewenvironment{itemize}{
-\begin{list}{$\bullet$}{
-\labelwidth=4em
-\labelsep=0.5em
-\leftmargin=0em
-\rightmargin=0em
-\parsep=\parskip
-\itemsep=0em
-\topsep=0em
-\itemindent=2.1em
-}
-}{\end{list}}
+    \begin{list}{$\bullet$}{
+        \labelwidth=4em
+        \labelsep=0.5em
+        \leftmargin=0em
+        \rightmargin=0em
+        \parsep=\parskip
+        \itemsep=0em
+              \topsep=0em
+        \itemindent=2.1em
+              }
+              }{\end{list}}
 
 \endinput

@@ -88,69 +88,69 @@
 正文开始 \cite{ref,author}.
 
 \begin{definition}[定义名,可省略]\label{def1}
-这是一个定义.
+    这是一个定义.
 \end{definition}
 
 \newpage
 
 图片如\ref{fig1}所示.
 \begin{figure}[!t]
-\centering
-%\includegraphics{fig1.eps}
-\cnenfigcaption{图题}{Caption}
-\label{fig1}
+    \centering
+    %\includegraphics{fig1.eps}
+    \cnenfigcaption{图题}{Caption}
+    \label{fig1}
 \end{figure}
 
 \subsection{二级标题}
 表格如表\ref{tab1}所示.
 \begin{table}[!t]
-\cnentablecaption{表题}{Caption}
-\label{tab1}
-\footnotesize
-\tabcolsep 49pt %space between two columns. 用于调整列间距
-\begin{tabular*}{\textwidth}{cccc}
-\toprule
-  Title a & Title b & Title c & Title d \\\hline
-  Aaa & Bbb & Ccc & Ddd\\
-  Aaa & Bbb & Ccc & Ddd\\
-  Aaa & Bbb & Ccc & Ddd\\
-\bottomrule
-\end{tabular*}
+    \cnentablecaption{表题}{Caption}
+    \label{tab1}
+    \footnotesize
+    \tabcolsep 49pt %space between two columns. 用于调整列间距
+    \begin{tabular*}{\textwidth}{cccc}
+        \toprule
+        Title a & Title b & Title c & Title d \\\hline
+        Aaa & Bbb & Ccc & Ddd\\
+        Aaa & Bbb & Ccc & Ddd\\
+        Aaa & Bbb & Ccc & Ddd\\
+        \bottomrule
+    \end{tabular*}
 \end{table}
 
 \subsubsection{三级标题}
 算法如算法\ref{alg1}所示.
 \begin{algorithm}
-%\floatname{algorithm}{Algorithm}%更改算法前缀名称
-\renewcommand{\algorithmicrequire}{\textbf{输入:}}% 更改输入名称
-\renewcommand{\algorithmicensure}{\textbf{主迭代:}}% 更改输出名称
-\newcommand{\LASTCON}{\item[\algorithmiclastcon]}
-\newcommand{\algorithmiclastcon}{\textbf{输出:}}% 更改输出名称
-\footnotesize
-\caption{算法标题}
-\label{alg1}
-\begin{algorithmic}[1]
-    \REQUIRE $n \geq 0 \vee x \neq 0$;
-    \ENSURE $y = x^n$;
-    \STATE $y \Leftarrow 1$;
-    \IF{$n < 0$}
+    %\floatname{algorithm}{Algorithm}%更改算法前缀名称
+    \renewcommand{\algorithmicrequire}{\textbf{输入:}}% 更改输入名称
+    \renewcommand{\algorithmicensure}{\textbf{主迭代:}}% 更改输出名称
+    \newcommand{\LASTCON}{\item[\algorithmiclastcon]}
+    \newcommand{\algorithmiclastcon}{\textbf{输出:}}% 更改输出名称
+    \footnotesize
+    \caption{算法标题}
+    \label{alg1}
+    \begin{algorithmic}[1]
+        \REQUIRE $n \geq 0 \vee x \neq 0$;
+        \ENSURE $y = x^n$;
+        \STATE $y \Leftarrow 1$;
+        \IF{$n < 0$}
         \STATE $X \Leftarrow 1 / x$;
         \STATE $N \Leftarrow -n$;
-    \ELSE
+        \ELSE
         \STATE $X \Leftarrow x$;
         \STATE $N \Leftarrow n$;
-    \ENDIF
-    \WHILE{$N \neq 0$}
-        \IF{$N$ is even}
-            \STATE $X \Leftarrow X \times X$;
-            \STATE $N \Leftarrow N / 2$;
-        \ELSE[$N$ is odd]
-            \STATE $y \Leftarrow y \times X$;
-            \STATE $N \Leftarrow N - 1$;
         \ENDIF
-    \ENDWHILE
-    \LASTCON
-\end{algorithmic}
+        \WHILE{$N \neq 0$}
+        \IF{$N$ is even}
+        \STATE $X \Leftarrow X \times X$;
+        \STATE $N \Leftarrow N / 2$;
+        \ELSE[$N$ is odd]
+        \STATE $y \Leftarrow y \times X$;
+        \STATE $N \Leftarrow N - 1$;
+        \ENDIF
+        \ENDWHILE
+        \LASTCON
+    \end{algorithmic}
 \end{algorithm}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -172,9 +172,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{thebibliography}{99}
 
-\bibitem{ref} Author A, Author B, Author C. Reference title. Journal, Year, Vol: Number or pages
+    \bibitem{ref} Author A, Author B, Author C. Reference title. Journal, Year, Vol: Number or pages
 
-\bibitem{author} 张三, 李四, Author C, et al. Reference title. In: Proceedings of Conference, Place, Year. Number or pages
+    \bibitem{author} 张三, 李四, Author C, et al. Reference title. In: Proceedings of Conference, Place, Year. Number or pages
 
 \end{thebibliography}
 
@@ -250,17 +250,17 @@
 
 %%% 普通列表
 \begin{itemize}
-\item Aaa aaa.
-\item Bbb bbb.
-\item Ccc ccc.
+    \item Aaa aaa.
+    \item Bbb bbb.
+    \item Ccc ccc.
 \end{itemize}
 
 %%% 自由编号列表
 \begin{itemize}
-\itemindent 4em
-\item[(1)] Aaa aaa.
-\item[(2)] Bbb bbb.
-\item[(3)] Ccc ccc.
+    \itemindent 4em
+    \item[(1)] Aaa aaa.
+    \item[(2)] Bbb bbb.
+    \item[(3)] Ccc ccc.
 \end{itemize}
 
 %%% 定义、定理、引理、推论等, 可用下列标签
@@ -279,7 +279,7 @@
 %%% property 性质
 %%% []中的名称可以省略, \label{引用名}可在正文中引用
 \begin{definition}[定义名]\label{def1}
-定义内容.
+    定义内容.
 \end{definition}
 
 
@@ -287,158 +287,158 @@
 %%% 单图
 %%% 可在文中使用图\ref{fig1}引用图编号
 \begin{figure}[!t]
-\centering
-\includegraphics{fig1.eps}
-\cnenfigcaption{中文图题}{Caption}
-\label{fig1}
+    \centering
+    \includegraphics{fig1.eps}
+    \cnenfigcaption{中文图题}{Caption}
+    \label{fig1}
 \end{figure}
 
 %%% 并排图
 %%% 可在文中使用图\ref{fig1}、图\ref{fig2}引用图编号
 \begin{figure}[!t]
-\centering
-\begin{minipage}[c]{0.48\textwidth}
-\centering
-\includegraphics{fig1.eps}
-\end{minipage}
-\hspace{0.02\textwidth}
-\begin{minipage}[c]{0.48\textwidth}
-\centering
-\includegraphics{fig2.eps}
-\end{minipage}\\[3mm]
-\begin{minipage}[t]{0.48\textwidth}
-\centering
-\cnenfigcaption{中文图题1}{Caption1}
-\label{fig1}
-\end{minipage}
-\hspace{0.02\textwidth}
-\begin{minipage}[t]{0.48\textwidth}
-\centering
-\cnenfigcaption{中文图题2}{Caption2}
-\label{fig2}
-\end{minipage}
+    \centering
+    \begin{minipage}[c]{0.48\textwidth}
+        \centering
+        \includegraphics{fig1.eps}
+    \end{minipage}
+    \hspace{0.02\textwidth}
+    \begin{minipage}[c]{0.48\textwidth}
+        \centering
+        \includegraphics{fig2.eps}
+    \end{minipage}\\[3mm]
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \cnenfigcaption{中文图题1}{Caption1}
+        \label{fig1}
+    \end{minipage}
+    \hspace{0.02\textwidth}
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \cnenfigcaption{中文图题2}{Caption2}
+        \label{fig2}
+    \end{minipage}
 \end{figure}
 
 %%% 并排子图
 %%% 需要英文分图题 (a)...; (b)...
 \begin{figure}[!t]
-\centering
-\begin{minipage}[c]{0.48\textwidth}
-\centering
-\includegraphics{subfig1.eps}
-\end{minipage}
-\hspace{0.02\textwidth}
-\begin{minipage}[c]{0.48\textwidth}
-\centering
-\includegraphics{subfig2.eps}
-\end{minipage}
-\cnenfigcaption{中文图题}{Caption}
-\label{fig1}
+    \centering
+    \begin{minipage}[c]{0.48\textwidth}
+        \centering
+        \includegraphics{subfig1.eps}
+    \end{minipage}
+    \hspace{0.02\textwidth}
+    \begin{minipage}[c]{0.48\textwidth}
+        \centering
+        \includegraphics{subfig2.eps}
+    \end{minipage}
+    \cnenfigcaption{中文图题}{Caption}
+    \label{fig1}
 \end{figure}
 
 %%% 算法
 %%% 可在文中使用 算法\ref{alg1} 引用算法编号
 \begin{algorithm}
-%\floatname{algorithm}{Algorithm}%更改算法前缀名称
-%\renewcommand{\algorithmicrequire}{\textbf{Input:}}% 更改输入名称
-%\renewcommand{\algorithmicensure}{\textbf{Output:}}% 更改输出名称
-\footnotesize
-\caption{算法标题}
-\label{alg1}
-\begin{algorithmic}[1]
-    \REQUIRE $n \geq 0 \vee x \neq 0$;
-    \ENSURE $y = x^n$;
-    \STATE $y \Leftarrow 1$;
-    \IF{$n < 0$}
+    %\floatname{algorithm}{Algorithm}%更改算法前缀名称
+    %\renewcommand{\algorithmicrequire}{\textbf{Input:}}% 更改输入名称
+    %\renewcommand{\algorithmicensure}{\textbf{Output:}}% 更改输出名称
+    \footnotesize
+    \caption{算法标题}
+    \label{alg1}
+    \begin{algorithmic}[1]
+        \REQUIRE $n \geq 0 \vee x \neq 0$;
+        \ENSURE $y = x^n$;
+        \STATE $y \Leftarrow 1$;
+        \IF{$n < 0$}
         \STATE $X \Leftarrow 1 / x$;
         \STATE $N \Leftarrow -n$;
-    \ELSE
+        \ELSE
         \STATE $X \Leftarrow x$;
         \STATE $N \Leftarrow n$;
-    \ENDIF
-    \WHILE{$N \neq 0$}
-        \IF{$N$ is even}
-            \STATE $X \Leftarrow X \times X$;
-            \STATE $N \Leftarrow N / 2$;
-        \ELSE[$N$ is odd]
-            \STATE $y \Leftarrow y \times X$;
-            \STATE $N \Leftarrow N - 1$;
         \ENDIF
-    \ENDWHILE
-\end{algorithmic}
+        \WHILE{$N \neq 0$}
+        \IF{$N$ is even}
+        \STATE $X \Leftarrow X \times X$;
+        \STATE $N \Leftarrow N / 2$;
+        \ELSE[$N$ is odd]
+        \STATE $y \Leftarrow y \times X$;
+        \STATE $N \Leftarrow N - 1$;
+        \ENDIF
+        \ENDWHILE
+    \end{algorithmic}
 \end{algorithm}
 
 %%% 简单表格
 %%% 可在文中使用 表\ref{tab1} 引用表编号
 \begin{table}[!t]
-\cnentablecaption{表题}{Caption}
-\label{tab1}
-\footnotesize
-\tabcolsep 49pt %space between two columns. 用于调整列间距
-\begin{tabular*}{\textwidth}{cccc}
-\toprule
-  Title a & Title b & Title c & Title d \\\hline
-  Aaa & Bbb & Ccc & Ddd\\
-  Aaa & Bbb & Ccc & Ddd\\
-  Aaa & Bbb & Ccc & Ddd\\
-\bottomrule
-\end{tabular*}
+    \cnentablecaption{表题}{Caption}
+    \label{tab1}
+    \footnotesize
+    \tabcolsep 49pt %space between two columns. 用于调整列间距
+    \begin{tabular*}{\textwidth}{cccc}
+        \toprule
+        Title a & Title b & Title c & Title d \\\hline
+        Aaa & Bbb & Ccc & Ddd\\
+        Aaa & Bbb & Ccc & Ddd\\
+        Aaa & Bbb & Ccc & Ddd\\
+        \bottomrule
+    \end{tabular*}
 \end{table}
 
 %%% 换行表格
 \begin{table}[!t]
-\cnentablecaption{表题}{Caption}
-\label{tab1}
-\footnotesize
-\def\tabblank{\hspace*{10mm}} %blank leaving of both side of the table. 左右两边的留白
-\begin{tabularx}{\textwidth} %using p{?mm} to define the width of a column. 用p{?mm}控制列宽
-{@{\tabblank}@{\extracolsep{\fill}}cccp{100mm}@{\tabblank}}
-\toprule
-  Title a & Title b & Title c & Title d \\\hline
-  Aaa & Bbb & Ccc & Ddd ddd ddd ddd.
+    \cnentablecaption{表题}{Caption}
+    \label{tab1}
+    \footnotesize
+    \def\tabblank{\hspace*{10mm}} %blank leaving of both side of the table. 左右两边的留白
+    \begin{tabularx}{\textwidth} %using p{?mm} to define the width of a column. 用p{?mm}控制列宽
+        {@{\tabblank}@{\extracolsep{\fill}}cccp{100mm}@{\tabblank}}
+        \toprule
+        Title a & Title b & Title c & Title d                                                                                        \\\hline
+        Aaa     & Bbb     & Ccc     & Ddd ddd ddd ddd.
 
-  Ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd.\\
-  Aaa & Bbb & Ccc & Ddd ddd ddd ddd.\\
-  Aaa & Bbb & Ccc & Ddd ddd ddd ddd.\\
-\bottomrule
-\end{tabularx}
+        Ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd ddd. \\
+        Aaa     & Bbb     & Ccc     & Ddd ddd ddd ddd.                                                                               \\
+        Aaa     & Bbb     & Ccc     & Ddd ddd ddd ddd.                                                                               \\
+        \bottomrule
+    \end{tabularx}
 \end{table}
 
 %%% 单行公式
 %%% 可在文中使用 (\ref{eq1})式 引用公式编号
 %%% 如果是句子开头, 使用 公式(\ref{eq1}) 引用
 \begin{equation}
-A(d,f)=d^{l}a^{d}(f),
-\label{eq1}
+    A(d,f)=d^{l}a^{d}(f),
+    \label{eq1}
 \end{equation}
 
 %%% 不编号的单行公式
 \begin{equation}
-\nonumber
-A(d,f)=d^{l}a^{d}(f),
+    \nonumber
+    A(d,f)=d^{l}a^{d}(f),
 \end{equation}
 
 %%% 公式组
 \begin{eqnarray}
-\nonumber
-&X=[x_{11},x_{12},\ldots,x_{ij},\ldots ,x_{n-1,n}]^{\rm T},\\
-\nonumber
-&\varepsilon=[e_{11},e_{12},\ldots ,e_{ij},\ldots ,e_{n-1,n}],\\
-\nonumber
-&T=[t_{11},t_{12},\ldots ,t_{ij},\ldots ,t_{n-1,n}].
+    \nonumber
+    &X=[x_{11},x_{12},\ldots,x_{ij},\ldots ,x_{n-1,n}]^{\rm T},\\
+    \nonumber
+    &\varepsilon=[e_{11},e_{12},\ldots ,e_{ij},\ldots ,e_{n-1,n}],\\
+    \nonumber
+    &T=[t_{11},t_{12},\ldots ,t_{ij},\ldots ,t_{n-1,n}].
 \end{eqnarray}
 
 %%% 条件公式
 \begin{eqnarray}
-\sum_{j=1}^{n}x_{ij}-\sum_{k=1}^{n}x_{ki}=
-\left\{
-\begin{aligned}
-1,&\quad i=1,\\
-0,&\quad i=2,\ldots ,n-1,\\
--1,&\quad i=n.
-\end{aligned}
-\right.
-\label{eq1}
+    \sum_{j=1}^{n}x_{ij}-\sum_{k=1}^{n}x_{ki}=
+    \left\{
+    \begin{aligned}
+        1,  & \quad i=1,             \\
+        0,  & \quad i=2,\ldots ,n-1, \\
+        -1, & \quad i=n.
+    \end{aligned}
+    \right.
+    \label{eq1}
 \end{eqnarray}
 
 %%% 其他格式
