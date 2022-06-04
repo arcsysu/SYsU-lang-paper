@@ -1,6 +1,6 @@
 ﻿\def\sci@fileversion{2.11}
 \def\sci@filedate{2020/01/02}
-\def\@journal{中国科学: 信息科学}
+\def\@journal{2022中国高校计算机教育大会}
 \def\@issn{1674-7267}
 \def\@copyright{$\copyright$~2020~}
 \def\@website{\url{www.scichina.com}~~~~\url{infocn.scichina.com}}
@@ -9,7 +9,7 @@
 \ProvidesClass{SCIS2020cn}[\sci@filedate, \sci@fileversion]
 
 \let\CCTCJKfonts=1
-\LoadClass[twoside]{ctexart}
+\LoadClass[fontset=ubuntu]{ctexart}
 %% math packages
 \RequirePackage{amsmath,amsthm,amsfonts,amssymb,bm,upgreek,multicol,mathrsfs,pifont,amscd,latexsym,geometry,color,fancyhdr}
 %% graphics packages
@@ -60,7 +60,7 @@
 \let\@Year\@empty \def\Year#1{\def\@Year{#1}}
 \let\@Vol\@empty \def\Vol#1{\def\@Vol{#1}}
 \let\@No\@empty \def\No#1{\def\@No{#1}}
-\let\@AuthorMark\@empty \def\AuthorMark#1{\def\@AuthorMark{#1:~}}
+\let\@AuthorMark\@empty \def\AuthorMark#1{\def\@AuthorMark{#1.~}}
 \let\@AuthorCitation\@empty \def\AuthorCitation#1{\def\@AuthorCitation{#1}}
 \let\@enAuthorCitation\@empty \def\enAuthorCitation#1{\def\@enAuthorCitation{#1}}
 \let\@BeginPage\@empty \def\BeginPage#1{\def\@BeginPage{#1}}
@@ -198,16 +198,16 @@
 {\def\@pagerank{\@BeginPage}}
 {\def\@pagerank{\@BeginPage--\pageref{LastPage}}}
 \ifthenelse{\equal{\@DOI}{\@empty}}
-{\def\@oddheadtext{中国科学\,:\,信息科学}}
+{\def\@oddheadtext{2022中国高校计算机教育大会}}
 {\ifthenelse{\equal{\@onlinetag}{\@empty}}
     {\def\@oddheadtext{中国科学\,:\,信息科学\hspace{3mm}第~\@Vol~卷\hspace{3mm}第~\@No~期}}
     {\def\@oddheadtext{中国科学\,:\,信息科学}}
 }
 %首页页眉页脚
 \begin{picture}(0,0)
-    \put(-21,17){\parbox[c]{120mm}{\zihao{-5} SCIENTIA SINICA~\,\,Informationis}}
+    \put(-21,17){\parbox[c]{120mm}{\zihao{-5} China College Eduction Conference 2022}}
     \ifx\@DOI\@empty
-        \put(-21,35){\parbox[c]{120mm}{\jiuhao 中国科学\,: 信息科学}}
+        \put(-21,35){\parbox[c]{120mm}{\jiuhao 2022中国高校计算机教育大会}}
         \put(-21,29){\thicklines\line(1,0){455}}
     \else
         \ifx\@onlinetag\@empty \put(-21,35){\parbox[c]{120mm}{\jiuhao 中国科学\,: 信息科学\hspace{5mm}\@Year\,年\hspace{3mm}第\,\@Vol\,卷\hspace{3mm}第\,\@No\,期\,:\;\@pagerank}}
@@ -241,16 +241,16 @@
     \ifx\@enAuthorCitation\@empty
         \begin{figure}[!b]
             \centering
-            \fcolorbox[rgb]{1,1,1}{0.8,0.8,0.8}{\parbox[t]{144.6truemm{\bf\scriptsize 引用格式:\ }}{\scriptsize \@AuthorCitation. \@titlecitation. 中国科学: 信息科学,
-                    \ifx\@DOI\@empty{在审文章}\else{\@Year}{\ifx\@onlinetag\@empty{, \@Vol: \@pagerank}\fi}{, doi: }\href{https://doi.org/\@DOI}{\url{\@DOI}}\fi}}
+            \fcolorbox[rgb]{1,1,1}{0.8,0.8,0.8}{\parbox[t]{144.6truemm{\bf\scriptsize 引用格式:\ }}{\scriptsize \@AuthorCitation. \@titlecitation. 2022中国高校计算机教育大会,
+                    \ifx\@DOI\@empty{投稿文章}\else{\@Year}{\ifx\@onlinetag\@empty{, \@Vol: \@pagerank}\fi}{, doi: }\href{https://doi.org/\@DOI}{\url{\@DOI}}\fi}}
         \end{figure}
     \else
         \begin{figure}[!b]
             \centering
             \fcolorbox[rgb]{1,1,1}{0.8,0.8,0.8}{\parbox[t]{144.6truemm{\bf\scriptsize 引用格式:\ }}
-                {\scriptsize \@AuthorCitation. \@titlecitation. 中国科学: 信息科学,
-                    \ifx\@DOI\@empty{在审文章}\else{\@Year}{\ifx\@onlinetag\@empty{, \@Vol: \@pagerank}\fi}{, doi: }\href{https://doi.org/\@DOI}{\url{\@DOI}}\fi\\
-                    \@enAuthorCitation. \@entitlecitation~(in Chinese). Sci Sin Inform,
+                {\scriptsize \@AuthorCitation. \@titlecitation. 2022中国高校计算机教育大会,
+                    \ifx\@DOI\@empty{投稿文章}\else{\@Year}{\ifx\@onlinetag\@empty{, \@Vol: \@pagerank}\fi}{, doi: }\href{https://doi.org/\@DOI}{\url{\@DOI}}\fi\\
+                    \@enAuthorCitation. \@entitlecitation~(in Chinese). China College Eduction Conference,
                     \ifx\@DOI\@empty{for review}\else{\@Year}{\ifx\@onlinetag\@empty{, \@Vol: \@pagerank}\fi}{, doi: }\href{https://doi.org/\@DOI}{\url{\@DOI}}\fi}}
         \end{figure}
     \fi
@@ -566,10 +566,10 @@
 \newcommand*{\cnenfigcaption}[2]{%
     \def\figurename{\cnfigurename}
     \caption{\baselineskip 10pt\jiuhao\bf #1}
-    \addtocounter{figure}{-1}
-    \vspace*{-3mm}
-    \def\figurename{\enfigurename}
-    \caption{\baselineskip 10pt #2}
+    %\addtocounter{figure}{-1}
+    %\vspace*{-3mm}
+    %\def\figurename{\enfigurename}
+    %\caption{\baselineskip 10pt #2}
 }
 
 \newcommand*{\cntablename}{表}
@@ -577,10 +577,10 @@
 \newcommand*{\cnentablecaption}[2]{%
     \def\tablename{\cntablename}
     \caption{\baselineskip 10pt\jiuhao\bf #1}
-    \addtocounter{table}{-1}
-    \vspace*{-1mm}
-    \def\tablename{\entablename}
-    \caption{\baselineskip 10pt #2}
+    %\addtocounter{table}{-1}
+    %\vspace*{-1mm}
+    %\def\tablename{\entablename}
+    %\caption{\baselineskip 10pt #2}
 }
 
 
