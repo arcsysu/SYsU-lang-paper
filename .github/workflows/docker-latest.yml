@@ -24,10 +24,10 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          outputs: type=tar,dest=/${{ runner.tmp }}/sciscn.tar
+          outputs: type=tar,dest=sciscn.tar
 
       - name: Load image
-        run: tar xf /$RUNNER_TEMP/sciscn.tar
+        run: tar xf sciscn.tar
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
