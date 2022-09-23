@@ -3,8 +3,8 @@ FROM texlive/texlive:latest as builder
 WORKDIR /workspace
 COPY . .
 RUN <<EOF
-apt update
-apt install fonts-noto-cjk-extra
+apt-get update
+apt-get install --no-install-recommends fonts-noto-cjk-extra
 xelatex sciscn.tex
 xelatex sciscn.tex
 EOF
