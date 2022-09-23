@@ -1,4 +1,4 @@
-name: docker-latest
+name: build_release
 
 on:
   push:
@@ -21,12 +21,10 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Compile
+      - name: Build
         run: |
           apt-get update -y
           apt-get install --no-install-recommends -y fonts-noto-cjk-extra
-          xelatex sciscn
-          bibtex sciscn
           xelatex sciscn
           xelatex sciscn
 
