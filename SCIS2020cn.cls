@@ -9,7 +9,7 @@
 \ProvidesClass{SCIS2020cn}[\sci@filedate, \sci@fileversion]
 
 \let\CCTCJKfonts=1
-\LoadClass[fontset=ubuntu]{ctexart}
+\LoadClass{ctexart}
 %% math packages
 \RequirePackage{amsmath,amsthm,amsfonts,amssymb,bm,upgreek,multicol,mathrsfs,pifont,amscd,latexsym,geometry,color,fancyhdr}
 %% graphics packages
@@ -595,7 +595,7 @@
 \newcommand{\Set}[2]{\ensuremath{\left\{ #1 \left| \right. #2 \right\}}}%
 \newcommand{\abs}[1]{\ensuremath{\left| #1 \right|}}%
 \newcommand{\map}[3]{\ensuremath{#1 : #2 \rightarrow #3}}%
-\renewcommand{\C}[1]{\ensuremath{\mathcal{#1}}}%
+%\renewcommand{\C}[1]{\ensuremath{\mathcal{#1}}}%
 \newcommand{\restrict}[2]{\ensuremath{#1 \left|_{#2}\right.}}%
 \newcommand{\NN}{\mathbb{N}^0}
 \newcommand{\PN}{\mathbb{N}}

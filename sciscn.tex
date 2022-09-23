@@ -133,7 +133,7 @@ LLVM是最为流行的开源编译器框架，支持多种语言和底层硬件�
     \end{tabular*}
 \end{table}
 
-\textbf{Cornell CS6120}: 康奈尔（Cornell）大学的高级编译课程则更注重编译环节，实验同样划分为4个部分，分别是：小型语言Bril生态扩展、编译优化（语法树层面）、编写LLVM Pass，以及自选主题的开放项目。虽有涉及部分编译环节且引导学生熟悉LLVM Pass，但实验总体缺乏完整性，各部分耦合不够紧密，未能较好的做到分阶段覆盖主要环节，因此不能有效帮助学生建立编译的完整认知。与此同时，LLVM Pass编写是基于旧的Pass机制\cite{llvm_newpass}，且在评测集上需要学生自主构建并编写评测脚本，明显增加了工作量和繁琐度。
+\textbf{Cornell CS6120}: 康奈尔（Cornell）大学的高级编译课程则更注重编译环节，实验同样划分为四个部分，分别是：小型语言Bril生态扩展、编译优化（语法树层面）、编写LLVM Pass，以及自选主题的开放项目。虽有涉及部分编译环节且引导学生熟悉LLVM Pass，但实验总体缺乏完整性，各部分耦合不够紧密，未能较好的做到分阶段覆盖主要环节，因此不能有效帮助学生建立编译的完整认知。与此同时，LLVM Pass编写是基于旧的Pass机制\cite{llvm_newpass}，且在评测集上需要学生自主构建并编写评测脚本，明显增加了工作量和繁琐度。
 
 \textbf{国内课程（清华大学、北京大学、北京航空航天大学等）}：
 过去几年，随着国内对计算机系统教育的愈发重视，代表性高校的编译课程都围绕实践和实用方面进行了实验教学改革，例如面向类C编程语言、基于Clang/LLVM。通过对几所典型高校的实验教学调研，我们发现：1）教学语言方面，普遍基于全国大学生计算机系统能力大赛—— 编译系统设计赛中使用的类 C 语言 SysY\cite{sysy}，以赛促改、以赛促学。然而，SysY 语言精简了预处理（\texttt{\#define}、\texttt{\#include}等）过程，在实现编译器自举或扩展编译实现支持其他应用上缺乏表现力，存在较大的局限性；2）实验开展上，清北和北航的课程要求学生继续向已有的实现里添加语法来推进实验，但学生因初期不具备完整知识体系，其代码随语法逐渐复杂化可能需要不断进行重构，如图 \ref{complain}；3）Clang/LLVM 对接上，清北都提供了较为复杂的实验框架或自定义的IR表示，而非直接基于LLVM进行开发，这也阻碍学生对编译核心流程认知的建立；4）编译最终输出方面，清北要求完成RISC-V汇编代码的生成，其他则不基于LLVM库最终输出LLVM IR，这样会导致任务相对繁重，极大增加了工作量；5）测评机制方面，普遍包含自动评测脚本，但评测机部分通常不开源，难以在课程中直接利用并改进。
@@ -154,7 +154,7 @@ LLVM是最为流行的开源编译器框架，支持多种语言和底层硬件�
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.9\textwidth]{assets/image/rank.jpg}
+    \includegraphics[width=0.75\textwidth]{assets/image/rank.png}
     \cnenfigcaption{在线评测与性能排名}{Caption}
     \label{rank}
 \end{figure}
@@ -181,7 +181,7 @@ LLVM是最为流行的开源编译器框架，支持多种语言和底层硬件�
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.9\textwidth]{{assets/image/github}}
+    \includegraphics[width=0.75\textwidth]{{assets/image/github}}
     \cnenfigcaption{实验框架开源于 GitHub 平台}{Caption}
     \label{github}
 \end{figure}
@@ -191,7 +191,7 @@ LLVM是最为流行的开源编译器框架，支持多种语言和底层硬件�
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.9\textwidth]{{assets/image/projs_overview}.pdf}
+    \includegraphics[width=0.75\textwidth]{{assets/image/projs_overview}.pdf}
     \cnenfigcaption{实验总体安排}{Caption}
     \label{projs_overview}
 \end{figure}
@@ -215,7 +215,7 @@ LLVM是最为流行的开源编译器框架，支持多种语言和底层硬件�
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.9\textwidth]{assets/image/report1}
+    \includegraphics[width=0.75\textwidth]{assets/image/report1}
     \cnenfigcaption{学生基于实验二实现的小工具}{Caption}
     \label{report1}
 \end{figure}
@@ -278,15 +278,15 @@ LLVM是最为流行的开源编译器框架，支持多种语言和底层硬件�
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.3\textwidth]{assets/image/tucao.jpg}
-    \includegraphics[width=0.6\textwidth]{assets/image/tucao1.jpg}
+    \includegraphics[width=0.25\textwidth]{assets/image/tucao.jpg}
+    \includegraphics[width=0.5\textwidth]{assets/image/tucao1.jpg}
     \cnenfigcaption{学生完成实验二之余制作的表情包，苦中作乐}{Caption}
     \label{tucao}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.9\textwidth]{assets/image/report2}
+    \includegraphics[width=0.75\textwidth]{assets/image/report2}
     \cnenfigcaption{学生实验二心得}{Caption}
     \label{report2}
 \end{figure}
@@ -295,9 +295,9 @@ LLVM是最为流行的开源编译器框架，支持多种语言和底层硬件�
 
 %\textcolor{red}{所幸经过实验二的风波，学生在面对实验三时不再首先质疑实验是否可以完成。但是学生在实验三遇到的一个难题是：LLVM 库本身的更新与重构过于频繁，很多时候文档并没有跟上；优质的中文资料更是偏少。在实验中我们由助教与学生同时完成了实验三，并编写中文指导文档，标注一些实验中可能会使用到的 LLVM API 与使用方法。}
 
-实验四是开放性实验，其难度完全由学生自行把控，追求性能优化的同时将伴随编程工作量的上升。但是一些常见的优化技巧，比如死代码消除等资料较为丰富，预计的代码量在500 行左右。截至论文投稿日（2022年5月31日），实验四发布时长不超过一周，但已有学生将编译器的性能从开始的12\%（与 \texttt{clang -O0} 相当）提高到24\%，加速比超过 100\%，总体来说非常值得期待。
+实验四是开放性实验，其难度完全由学生自行把控，追求性能优化的同时将伴随编程工作量的上升。但是一些常见的优化技巧，比如死代码消除等资料较为丰富，预计的代码量在500 行左右。截至学期结束时，学生可将编译器的性能从开始的12\%（与 \texttt{clang -O0} 相当）提高到48\%，加速比超过 400\%，取得明显的教学成效。
 
-拓展性实验方面，在完成实验基本任务之外，不少学生积极进行探索，尝试完成一些挑战性工作。图-\ref{report1} 展示了学生在实验二中利用JSON进行的代码格式规整化和规范检查的工具开发。尽管实验四尚在进行中，部分学生已经对后继机器代码生成进行了思考。
+拓展性实验方面，在完成实验基本任务之外，不少学生积极进行探索，尝试完成一些挑战性工作。图-\ref{report1} 展示了学生在实验二中利用JSON进行的代码格式规整化和规范检查的工具开发。尽管实验四仅要求编译生成LLVM IR，部分学生已经对后继机器代码生成进行了思考。
 
 \subsection{主要挑战及问题}
 根据学生的反馈，实验目前的挑战和问题主要体现在以下方面：
@@ -309,7 +309,7 @@ LLVM是最为流行的开源编译器框架，支持多种语言和底层硬件�
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.9\textwidth]{assets/image/report}
+    \includegraphics[width=0.75\textwidth]{assets/image/report}
     \cnenfigcaption{学生在实验中会面临需要多次重构的情况}{Caption}
     \label{complain}
 \end{figure}

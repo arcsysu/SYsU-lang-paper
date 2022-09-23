@@ -1,0 +1,32 @@
+name: docker-latest
+
+on:
+  push:
+    branches: [latest]
+    tags: ["*"]
+  pull_request:
+    branches: [latest]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build and export
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          outputs: type=tar,dest=/tmp/myimage.tar
+
+      - name: Load image
+        run: tar xf /tmp/myimage.tar
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          path: sciscn.pdf
