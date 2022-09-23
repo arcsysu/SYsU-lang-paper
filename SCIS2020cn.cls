@@ -329,8 +329,8 @@
     \else
         \noindent
         \begin{picture}(0,0){\put(0,-5){\color[rgb]{0.4,0.4,0.4}\line(1,0){455}}}\end{picture}
-        {\vskip2.3mm\noindent{\heiti 摘要\quad\,\,}\ignorespaces\fangsong\@abstract\vspace{1mm}\\
-        \noindent{\heiti 关键词\quad\,\,}\ignorespaces\fangsong\@keywords\\}
+        {\vskip2.3mm\noindent{\heiti 摘要\quad\,\,}\ignorespaces\@abstract\vspace{1mm}\\
+        \noindent{\heiti 关键词\quad\,\,}\ignorespaces\@keywords\\}
         \begin{picture}(0,0){\put(0,5){\color[rgb]{0.4,0.4,0.4}\line(1,0){455}}}\end{picture}
     \fi
 }
@@ -431,13 +431,13 @@
 \newcommand*\Acknowledgements[1]{
     \vskip 5mm
     \baselineskip 16pt
-        {\textbf{致谢}\quad{\fangsong#1}}\par
+        {\textbf{致谢}\quad{#1}}\par
 }
 
 \newcommand*\Supplements[1]{
     \vskip 5mm
     \baselineskip 16pt
-        {\textbf{补充材料}\quad{\fangsong#1~本文的补充材料见网络版infocn.scichina.com.
+        {\textbf{补充材料}\quad{#1~本文的补充材料见网络版infocn.scichina.com.
                 补充材料为作者提供的原始数据, 作者对其学术质量和内容负责.}}\par
 }
 \titleformat{\section}{\large\bfseries\heiti}{\thesection}{1em}{}
