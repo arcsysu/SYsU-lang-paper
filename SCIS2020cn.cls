@@ -9,7 +9,7 @@
 \ProvidesClass{SCIS2020cn}[\sci@filedate, \sci@fileversion]
 
 \let\CCTCJKfonts=1
-\LoadClass{ctexart}
+\LoadClass[fontset=ubuntu]{ctexart}
 %% math packages
 \RequirePackage{amsmath,amsthm,amsfonts,amssymb,bm,upgreek,multicol,mathrsfs,pifont,amscd,latexsym,geometry,color,fancyhdr}
 %% graphics packages
