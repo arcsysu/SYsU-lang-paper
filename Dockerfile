@@ -4,7 +4,7 @@ WORKDIR /workspace
 COPY . .
 RUN <<EOF
 apt-get update
-apt-get install --no-install-recommends fonts-noto-cjk-extra
+apt-get install --no-install-recommends -y fonts-noto-cjk-extra
 xelatex sciscn.tex
 xelatex sciscn.tex
 EOF
