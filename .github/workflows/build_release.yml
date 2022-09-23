@@ -24,7 +24,7 @@ jobs:
       - name: Build
         run: |
           apt-get update -y
-          apt-get install --no-install-recommends -y fonts-noto-cjk-extra
+          apt-get install --no-install-recommends -y fonts-arphic-ukai fonts-noto-cjk-extra
           xelatex sciscn
           xelatex sciscn
 
