@@ -13,21 +13,22 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container:
+      image: texlive/texlive:latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
-
-      - name: Build and export
-        uses: docker/build-push-action@v3
         with:
-          context: .
-          outputs: type=tar,dest=sciscn.tar
+          submodules: recursive
 
-      - name: Load image
-        run: tar xf sciscn.tar
+      - name: Compile
+        run: |
+          apt-get update -y
+          apt-get install --no-install-recommends -y fonts-noto-cjk-extra
+          xelatex sciscn
+          bibtex sciscn
+          xelatex sciscn
+          xelatex sciscn
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
