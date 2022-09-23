@@ -24,7 +24,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          outputs: type=tar,dest=/$RUNNER_TEMP/sciscn.tar
+          outputs: type=tar,dest=/${{runner.tmp}}/sciscn.tar
 
       - name: Load image
         run: tar xf /$RUNNER_TEMP/sciscn.tar
